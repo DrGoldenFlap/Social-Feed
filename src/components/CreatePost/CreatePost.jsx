@@ -45,10 +45,7 @@ const CreatePost= (props) => {
                     <option value="Gary">Gary</option>
                     <option value="Dustin">Dustin</option>
                     </select>
-                <button>Add Post</button>
-                <p>{title}</p>
-                <p>{body}</p>
-                <p>{author}</p>
+                <button>Add Post</button>               
             </form>
         </div>
     );
