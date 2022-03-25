@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
+import Post from '../Post/Post';
 
 const DisplayPost = (props) => {
-    const post= props.post;
+   
 
     
     return (  
         <div className="post">
-            {post.map((post) => (
-                <div className='post-preview' key={post.id}>
-                    <h2>{post.title}</h2>
-                    <p>Written by</p>
-                    <p>{post.body}</p>
-                </div>
-            ))}
+            {props.postData.map((entry) => {
+                return(
+                    <Post entry={entry}/>
+                );
+
+            })
+                
+            }
         </div>
     );
 }         

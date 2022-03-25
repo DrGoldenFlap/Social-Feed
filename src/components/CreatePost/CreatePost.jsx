@@ -11,7 +11,7 @@ const CreatePost= (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const post = {title, body, author, date}
-        console.log(post)
+        props.addNewPostProperty(post);
 
     }
 
@@ -36,6 +36,7 @@ const CreatePost= (props) => {
                     <select
                     value={author}
                     onChange={(e) => setAuthor(e.target.value)}>
+                    <option value="Select one">Select one</option>
                     <option value="Michael">Michael</option>
                     <option value="Brent">Brent</option>
                     <option value="Garret">Garret</option>

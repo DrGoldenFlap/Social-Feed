@@ -6,17 +6,23 @@ import CreatePost from './components/CreatePost/CreatePost';
 import DisplayPost from './components/DisplayPosts/DisplayPost';
 
 
+
 function App() {
-  const[post, setPost] = useState([
-    {title: "DEVCODECAMP!", body: "Devcodecamp is the bomb!!!", author: "Michael", id: 1}
-]);
+  
+  const [post, setPost] = useState([
+    {title: "DEVCODECAMP!", body: "Devcodecamp is the bomb!!!", author: "Michael", id: 1}]);
+
+  function addNewPost(posts){
+    let tempPost = [posts, ...post];
+    setPost(tempPost);
+  }
 
 
   return (
-    <div className="App">
+    <div>
         <Header/>
-        <CreatePost/>
-        <DisplayPost post={post}/>
+        <CreatePost addNewPostProperty={addNewPost}/>
+        <DisplayPost postData={post}/>
 
     </div>
   );
